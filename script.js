@@ -117,11 +117,21 @@ function buildPlaylist() {
      2. Declare a `songs` variable
      3. Write an if / else if that assigns `songs` based on
         the mode
-     ===================================================== */
+        */
+const mode = modeSelector.value;
 
+let songs;
 
+if (mode === "quickPlay") {
 
-  /* =====================================================
+  songs = allSongs.slice(0, 3);
+
+} else if (mode === "fullSession") {
+
+  songs = allSongs;
+
+}
+  /*
      DEV TEAMS — STEP 6: Conditional Feedback
      (Also not demoed live — read closely before building
      your own win/lose message.)
