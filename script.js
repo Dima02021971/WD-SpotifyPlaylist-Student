@@ -263,8 +263,23 @@ function buildPlaylist() {
      player can collect a maximum of 10 drops, what are 2-3
      meaningful checkpoints worth celebrating along the way?
 
-     YOUR CODE GOES HERE:
-     ===================================================== */
+    
+function updateMilestone() {
+  const milestones = [
+    { count: 1, message: "🎵 First song cleared!" },
+    { count: 2, message: "🎶 Two songs removed!" },
+    { count: 3, message: "🏆 Three songs cleared!" },
+    { count: 4, message: "🌟 All four songs cleared!" }
+  ];
+
+  milestones.forEach(function(item) {
+    if (songsRemovedCount === item.count) {
+      milestone.textContent = item.message;
+    }
+  });
+}
+
+ */
 
 
 }
