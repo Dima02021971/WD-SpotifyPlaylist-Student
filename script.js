@@ -183,6 +183,8 @@ function buildPlaylist() {
      ===================================================== */
 
 
+songs.forEach(function(song, index) {
+
 
     /* =====================================================
        DEV TEAMS — STEP 8: Create and Display DOM Elements
@@ -206,11 +208,32 @@ function buildPlaylist() {
        puts a child element inside a parent element?
 
        YOUR CODE GOES HERE:
-       ===================================================== */
 
+const row = document.createElement("div");
+row.className = "song-row";
 
+const img = document.createElement("img");
+img.src = song.cover;
+img.alt = song.title;
 
-    /* =====================================================
+img.onerror = function() {
+  this.onerror = null;
+  this.src = "https://placehold.co/60x60?text=Music";
+};
+
+const title = document.createElement("span");
+title.textContent = song.title;
+
+const removeHint = document.createElement("span");
+removeHint.className = "remove-hint";
+removeHint.textContent = "click to remove";
+
+row.appendChild(img);
+row.appendChild(title);
+row.appendChild(removeHint);
+
+container.appendChild(row);
+
        DEV TEAMS — STEP 9: DOM Element Removal on Click
        🟦 DIRECT PRACTICE for your game's "DOM Element
        change/add/remove" requirement. This is the EXACT
